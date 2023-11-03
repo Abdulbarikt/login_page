@@ -66,8 +66,8 @@ class Screen2 extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    height: 45,
                     child: Center(
                       child: Text(
                         "Create Account",
@@ -92,8 +92,8 @@ class Screen2 extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    height: 65,
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    height: 45,
                     child: Center(
                       child: Text(
                         "Sign in",

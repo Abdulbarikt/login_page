@@ -4,7 +4,6 @@ import 'package:login_page/Screens/create_success.dart';
 
 class FormWidget extends StatelessWidget {
   const FormWidget({
-    super.key,
     required GlobalKey<FormState> formKey,
   }) : _formKey = formKey;
 
@@ -29,7 +28,7 @@ class FormWidget extends StatelessWidget {
           TextFormField(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             decoration: InputDecoration(
-              prefixIcon: Icon(Icons.person),
+              prefixIcon:const Icon(Icons.person),
               labelText: "First Name",
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -39,8 +38,8 @@ class FormWidget extends StatelessWidget {
               if (value!.trim().isEmpty) {
                 return 'First Name is required';
               }
-              if (value.contains(RegExp(r'\s'))) {
-                return 'First Name should not contain spaces';
+              if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
+                return 'invalid name format';
               }
               return null;
             },
@@ -112,6 +111,7 @@ class FormWidget extends StatelessWidget {
           ),
           SizedBox(height: 28),
           TextFormField(
+            maxLength: 2,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             decoration: InputDecoration(
               prefixIcon: Icon(Icons.person_2_outlined),

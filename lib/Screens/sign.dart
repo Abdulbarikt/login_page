@@ -12,8 +12,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  bool _obscurePassword = true; // Initially, password is obscured
+  final _formKey = GlobalKey<FormState>();
+  bool _Password = true;
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +67,8 @@ class _SignInState extends State<SignIn> {
                             if (value!.trim().isEmpty) {
                               return 'Username is required';
                             }
-                            if (value.contains(RegExp(r'\s'))) {
-                              return 'Username should not contain spaces';
+                            if (!RegExp(r'^[a-zA-Z]+$').hasMatch(value)) {
+                              return 'invalid name format';
                             }
                             return null;
                           },
@@ -77,7 +77,7 @@ class _SignInState extends State<SignIn> {
                           height: 28,
                         ),
                         TextFormField(
-                          obscureText: _obscurePassword,
+                          obscureText: _Password,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock),
@@ -87,13 +87,13 @@ class _SignInState extends State<SignIn> {
                             ),
                             suffixIcon: IconButton(
                               icon: Icon(
-                                _obscurePassword
+                                _Password
                                     ? Icons.visibility
                                     : Icons.visibility_off,
                               ),
                               onPressed: () {
                                 setState(() {
-                                  _obscurePassword = !_obscurePassword;
+                                  _Password = !_Password;
                                 });
                               },
                             ),
