@@ -28,7 +28,7 @@ class FormWidget extends StatelessWidget {
           TextFormField(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             decoration: InputDecoration(
-              prefixIcon:const Icon(Icons.person),
+              prefixIcon: const Icon(Icons.person),
               labelText: "First Name",
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -78,7 +78,9 @@ class FormWidget extends StatelessWidget {
               if (value!.trim().isEmpty) {
                 return 'Email is required';
               }
-              if (!value.contains(RegExp(r'^[a-zA-Z0-9._-]+@gmail\.com$'))) {
+              if (!value.contains(RegExp(
+                r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
+              ))) {
                 return 'Please enter a valid Gmail address';
               }
 
