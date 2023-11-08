@@ -58,7 +58,7 @@ class FormWidget extends StatelessWidget {
               if (value!.trim().isEmpty) {
                 return 'Last Name is required';
               }
-              if (value.contains(RegExp(r'\s'))) {
+              if (value.contains(RegExp(r'^[a-zA-Z]+$'))) {
                 return 'Last Name should not contain spaces';
               }
               return null;
