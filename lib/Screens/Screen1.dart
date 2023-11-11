@@ -3,8 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:login_page/Screens/Screen2.dart';
 
 class Screen1 extends StatelessWidget {
-  const Screen1({Key? key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
