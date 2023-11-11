@@ -5,7 +5,7 @@ import 'package:login_page/Screens/create.dart';
 import 'package:login_page/Screens/sign.dart';
 
 class Screen2 extends StatelessWidget {
-  const Screen2({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
