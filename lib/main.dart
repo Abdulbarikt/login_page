@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "loginPage",
       theme: ThemeData.dark(),
-      home: const Screen1(),
+      home:  Screen1(),
     );
   }
 }
