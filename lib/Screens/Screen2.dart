@@ -3,10 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:login_page/Screens/Screen1.dart';
 import 'package:login_page/Screens/create.dart';
 import 'package:login_page/Screens/sign.dart';
+import 'package:login_page/widgets/custom_buttons.dart';
 
 class Screen2 extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,58 +54,30 @@ class Screen2 extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   )),
-              SizedBox(
+              const SizedBox(
                 height: 34,
               ),
-              GestureDetector(
-                onTap: () {
+              CustomButton(
+                text: 'Create Account',
+                ontap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Create()));
                 },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: 45,
-                    child: Center(
-                      child: Text(
-                        "Create Account",
-                        style: GoogleFonts.sahitya(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    decoration: BoxDecoration(color: Colors.green[700]),
-                  ),
-                ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 22,
               ),
-              GestureDetector(
-                onTap: () {
+              CustomButton(
+                text: 'Sign In',
+                ontap: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => SignIn()));
                 },
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(30),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    height: 45,
-                    child: Center(
-                      child: Text(
-                        "Sign in",
-                        style: GoogleFonts.sahitya(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    decoration: BoxDecoration(color: Colors.green[700]),
-                  ),
-                ),
               ),
+              const SizedBox(
+                height: 22,
+              ),
+           
             ],
           )
         ],

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_page/Screens/create_success.dart';
+import 'package:login_page/widgets/custom_textfield.dart';
 
 class FormWidget extends StatelessWidget {
-  const FormWidget({
+  const FormWidget({super.key, 
     required GlobalKey<FormState> formKey,
   }) : _formKey = formKey;
 
@@ -25,16 +26,10 @@ class FormWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 28),
-          TextFormField(
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            decoration: InputDecoration(
-              prefixIcon: const Icon(Icons.person),
-              labelText: "First Name",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
-            validator: (value) {
+          CustomTextField(
+            labelText: 'First Name',
+            prefixIcon: Icons.person,
+            validation: (value) {
               if (value!.trim().isEmpty) {
                 return 'First Name is required';
               }
@@ -65,75 +60,51 @@ class FormWidget extends StatelessWidget {
             },
           ),
           SizedBox(height: 28),
-          TextFormField(
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            decoration: InputDecoration(
-              prefixIcon: Icon(Icons.email),
-              labelText: "Email",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
-            validator: (value) {
-              if (value!.trim().isEmpty) {
-                return 'Email is required';
-              }
-              if (!value.contains(RegExp(
-                r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
-              ))) {
-                return 'Please enter a valid Gmail address';
-              }
+          CustomTextField(
+              labelText: 'Email',
+              prefixIcon: Icons.mail,
+              validation: (value) {
+                if (value!.trim().isEmpty) {
+                  return 'Email is required';
+                }
+                if (!value.contains(RegExp(
+                  r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
+                ))) {
+                  return 'Please enter a valid Gmail address';
+                }
 
-              return null;
-            },
-          ),
+                return null;
+              }),
           SizedBox(height: 28),
-          TextFormField(
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            decoration: InputDecoration(
-              prefixIcon: Icon(Icons.phone_android_outlined),
-              labelText: "Phone Number",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
-            keyboardType: TextInputType.phone,
-            validator: (value) {
-              if (value!.trim().isEmpty) {
-                return 'Phone Number is required';
-              }
-              if (!value.contains(RegExp(r'^[0-9]+$'))) {
-                return 'Phone Number should only contain numbers';
-              }
-              if (value.length != 10) {
-                return 'Phone Number must be 10 digits';
-              }
-              return null;
-            },
-          ),
+          CustomTextField(
+              labelText: 'Phone',
+              prefixIcon: Icons.phone,
+              validation: (value) {
+                if (value!.trim().isEmpty) {
+                  return 'Phone Number is required';
+                }
+                if (!value.contains(RegExp(r'^[0-9]+$'))) {
+                  return 'Phone Number should only contain numbers';
+                }
+                if (value.length != 10) {
+                  return 'Phone Number must be 10 digits';
+                }
+                return null;
+              }),
           SizedBox(height: 28),
-          TextFormField(
-            maxLength: 2,
-            autovalidateMode: AutovalidateMode.onUserInteraction,
-            decoration: InputDecoration(
-              prefixIcon: Icon(Icons.person_2_outlined),
-              labelText: "Age",
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-            ),
-            keyboardType: TextInputType.number,
-            validator: (value) {
-              if (value!.trim().isEmpty) {
-                return 'Age is required';
-              }
-              int? age = int.tryParse(value);
-              if (age == null || age < 18) {
-                return 'Age must be a number and at least 18';
-              }
-              return null;
-            },
-          ),
+          CustomTextField(
+              labelText: 'Age',
+              prefixIcon: Icons.person,
+              validation: (value) {
+                if (value!.trim().isEmpty) {
+                  return 'Age is required';
+                }
+                int? age = int.tryParse(value);
+                if (age == null || age < 18) {
+                  return 'Age must be a number and at least 18';
+                }
+                return null;
+              }),
           SizedBox(height: 38),
           ElevatedButton(
             onPressed: () {
