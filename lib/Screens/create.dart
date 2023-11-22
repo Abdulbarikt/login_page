@@ -15,7 +15,7 @@ class Create extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
@@ -27,7 +27,7 @@ class Create extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => Screen2()),
                       );
                     },
-                    icon: Icon(Icons.arrow_back_ios)),
+                    icon: const Icon(Icons.arrow_back_ios)),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

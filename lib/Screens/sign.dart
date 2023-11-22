@@ -5,7 +5,7 @@ import 'package:login_page/Screens/sign_success.dart';
 import 'package:lottie/lottie.dart';
 
 class SignIn extends StatefulWidget {
-  SignIn({super.key});
+  const SignIn({super.key});
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -28,21 +28,21 @@ class _SignInState extends State<SignIn> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Screen2()),
+                    MaterialPageRoute(builder: (context) => const Screen2()),
                   );
                 },
-                icon: Icon(Icons.arrow_back_ios),
+                icon: const Icon(Icons.arrow_back_ios),
               ),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 150,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     height: 200,
                     child: Lottie.asset("Assets/login.json"),
@@ -57,7 +57,7 @@ class _SignInState extends State<SignIn> {
                         TextFormField(
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.person),
+                            prefixIcon: const Icon(Icons.person),
                             labelText: "Username",
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
@@ -73,14 +73,14 @@ class _SignInState extends State<SignIn> {
                             return null;
                           },
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 28,
                         ),
                         TextFormField(
                           obscureText: _Password,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock),
+                            prefixIcon: const Icon(Icons.lock),
                             labelText: "Password",
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0),
@@ -111,14 +111,14 @@ class _SignInState extends State<SignIn> {
                             return null;
                           },
                         ),
-                        SizedBox(height: 38),
+                        const SizedBox(height: 38),
                         ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Sign_success()),
+                                    builder: (context) => const Sign_success()),
                               );
                             }
                           },

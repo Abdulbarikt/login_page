@@ -4,7 +4,8 @@ import 'package:login_page/Screens/create_success.dart';
 import 'package:login_page/widgets/custom_textfield.dart';
 
 class FormWidget extends StatelessWidget {
-  const FormWidget({super.key, 
+  const FormWidget({
+    super.key,
     required GlobalKey<FormState> formKey,
   }) : _formKey = formKey;
 
@@ -16,7 +17,7 @@ class FormWidget extends StatelessWidget {
       key: _formKey,
       child: Column(
         children: [
-          SizedBox(height: 100),
+          const SizedBox(height: 100),
           Center(
             child: Text(
               "Create a New Account",
@@ -25,7 +26,7 @@ class FormWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 28),
+          const SizedBox(height: 28),
           CustomTextField(
             labelText: 'First Name',
             prefixIcon: Icons.person,
@@ -39,11 +40,11 @@ class FormWidget extends StatelessWidget {
               return null;
             },
           ),
-          SizedBox(height: 28),
+          const SizedBox(height: 28),
           TextFormField(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             decoration: InputDecoration(
-              prefixIcon: Icon(Icons.person),
+              prefixIcon: const Icon(Icons.person),
               labelText: "Last Name",
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10.0),
@@ -59,7 +60,7 @@ class FormWidget extends StatelessWidget {
               return null;
             },
           ),
-          SizedBox(height: 28),
+          const SizedBox(height: 28),
           CustomTextField(
               labelText: 'Email',
               prefixIcon: Icons.mail,
@@ -75,7 +76,7 @@ class FormWidget extends StatelessWidget {
 
                 return null;
               }),
-          SizedBox(height: 28),
+          const SizedBox(height: 28),
           CustomTextField(
               labelText: 'Phone',
               prefixIcon: Icons.phone,
@@ -91,7 +92,7 @@ class FormWidget extends StatelessWidget {
                 }
                 return null;
               }),
-          SizedBox(height: 28),
+          const SizedBox(height: 28),
           CustomTextField(
               labelText: 'Age',
               prefixIcon: Icons.person,
@@ -105,13 +106,14 @@ class FormWidget extends StatelessWidget {
                 }
                 return null;
               }),
-          SizedBox(height: 38),
+          const SizedBox(height: 38),
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Create_success()),
+                  MaterialPageRoute(
+                      builder: (context) => const Create_success()),
                 );
               }
             },

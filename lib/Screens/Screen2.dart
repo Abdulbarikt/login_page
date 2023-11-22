@@ -6,6 +6,8 @@ import 'package:login_page/Screens/sign.dart';
 import 'package:login_page/widgets/custom_buttons.dart';
 
 class Screen2 extends StatelessWidget {
+  const Screen2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,13 +18,15 @@ class Screen2 extends StatelessWidget {
               left: 20,
               child: IconButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Screen1()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Screen1()));
                   },
-                  icon: Icon(Icons.arrow_back_ios))),
+                  icon: const Icon(Icons.arrow_back_ios))),
           Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Center(
@@ -77,7 +81,6 @@ class Screen2 extends StatelessWidget {
               const SizedBox(
                 height: 22,
               ),
-           
             ],
           )
         ],

@@ -14,7 +14,6 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: ontap,
-     
         child: ClipRRect(
             borderRadius: BorderRadius.circular(25),
             child: Container(
@@ -27,7 +26,6 @@ class CustomButton extends StatelessWidget {
                   style: GoogleFonts.sansita(
                     fontSize: 25,
                   ),
-               
                 ),
               ),
             )));
